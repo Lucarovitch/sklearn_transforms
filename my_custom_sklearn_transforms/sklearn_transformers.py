@@ -30,27 +30,6 @@ class AdjustMeanSubject(BaseEstimator, TransformerMixin):
             lambda row: ((row['NOTA_MF'] + row['NOTA_EM'] + row['NOTA_DE']) / 3) if np.isnan(row['NOTA_GO']) else row[
                 'NOTA_GO'], axis=1
         )
-        for num, name in enumerate(df_data_1['NOTA_GO'], start=0):
-            data_new.append(1 if df_data_1['NOTA_GO'][num] != 0 else 0)
-        df_data_1['APROVADO_GO'] = data_new
-
-        data_new = []
-
-        for num, name in enumerate(df_data_1['NOTA_MF'], start=0):
-            data_new.append(1 if (df_data_1['NOTA_MF'][num] != 0) else 0)
-        df_data_1['APROVADO_MF'] = data_new
-
-        data_new = []
-
-        for num, name in enumerate(df_data_1['NOTA_EM'], start=0):
-            data_new.append(1 if (df_data_1['NOTA_EM'][num] != 0) else 0)
-        df_data_1['APROVADO_EM'] = data_new
-
-        data_new = []
-
-        for num, name in enumerate(df_data_1['NOTA_DE'], start=0):
-            data_new.append(1 if (df_data_1['NOTA_DE'][num] != 0) else 0)
-        df_data_1['APROVADO_DE'] = data_new
 
         return data
 
