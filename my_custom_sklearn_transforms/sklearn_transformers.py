@@ -45,6 +45,7 @@ class FeatureEngineering(BaseEstimator, TransformerMixin):
         df = X.copy()
         df['REPROVACOES_H'] = df['REPROVACOES_DE'] + df['REPROVACOES_EM']
         df['REPROVACOES_E'] = df['REPROVACOES_MF'] + df['REPROVACOES_GO']
-        df['MEDIA_T'] = (df['NOTA_MF'] + df['NOTA_GO'] + df['NOTA_DE'] + df['NOTA_EM']) / 4
+        df['MEDIA_H'] = (df['NOTA_DE'] + df['NOTA_EM']) / 2
+        df['MEDIA_E'] = (df['NOTA_MF'] + df['NOTA_GO']) / 2
 
         return df
