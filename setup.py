@@ -1,5 +1,5 @@
 from setuptools import setup
-
+import numpy as np
 
 setup(
       name='my_custom_sklearn_transforms',
